@@ -378,3 +378,7 @@ body{
   font-size: 20px;
   color: #989393;
 }
+
+#template_user, #template_contact{
+  display: none;
+}
