@@ -83,7 +83,7 @@ $("#search_contact").keyup(function(){
 $(".chat").click(function () {
    var click = $(this).attr("data-ref");
    var foto = $(".chat[data-ref=" + click + "] img").attr("src");
-   var nome = $(".chat[data-ref=" + click + "] .nomecont").attr("id");
+   var nome = $(".chat[data-ref=" + click + "] .nomecont").text();
 
    $(".chat").removeClass("active");
    $(".contact-mex").removeClass("active");
@@ -92,3 +92,23 @@ $(".chat").click(function () {
    $("#name").text(nome);
    $("#foto").prop("src", foto);
 })
+
+
+// funzione doppio click per aprire il menu con la pssibilità di eliminare il messaggio
+  $(document).on("click", ".user", function (event) {
+
+    var sel = $(this);
+
+    $(".user i").click(function (){
+      if ($(sel).find(".mex-menu").hasClass("active")) {
+        sel.find(".mex-menu").removeClass("active");
+        sel.find("i").removeClass("active");
+      } else{
+        sel.find(".mex-menu").addClass("active");
+        sel.find("i").addClass("active");
+      }
+      sel.find("a:last-child").click(function (){
+        sel.css("display", "none")
+      });
+    });
+  });

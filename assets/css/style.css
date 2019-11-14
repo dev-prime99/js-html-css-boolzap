@@ -95,7 +95,7 @@ body{
 
 .intright img{
   height: 40px;
-  width: auto;
+  width: 40px;
   border-radius: 50%;
   margin-right: 20px;
 }
@@ -272,20 +272,6 @@ body{
   display: block;
 }
 
-.contact-menu{
-  position: absolute;
-  background-color: #ffffff;
-  padding: 25px;
-  left: 420px;
-  transform: translateY(-17px);
-  display: none;
-}
-
-.contact-menu a{
-  display: block;
-  text-decoration: none;line-height: 30px;
-}
-
   /* right */
 
     /* messaggi */
@@ -331,6 +317,10 @@ body{
   background-color: #dcf8c6;
 }
 
+.bs_graf_txt p{
+  margin-right: 8px;
+}
+
 .bs_graf_txt p::first-letter{
   text-transform: uppercase;
 }
@@ -343,6 +333,41 @@ body{
   right: 5px;
 }
 
+.bs_graf_txt i{
+  position: absolute;
+  top: 10px;
+  right: 8px;
+  opacity: 0;
+}
+
+.bs_graf_txt i:hover{
+  opacity: 1;
+}
+
+.bs_graf_txt i.active{
+  opacity: 1;
+}
+
+.mex-menu{
+  width: 200px;
+  position: absolute;
+  background-color: #ffffff;
+  padding: 25px;
+  top: 70px;
+  right: 0;
+  transform: translateY(-17px);
+  display: none;
+  z-index: 12;
+}
+
+.mex-menu.active{
+  display: block;
+}
+
+.mex-menu a{
+  display: block;
+  text-decoration: none;line-height: 30px;
+}
 
     /* input text */
 
