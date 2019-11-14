@@ -295,9 +295,13 @@ body{
   overflow-x: auto;
   width: 100%;
   height: calc(100% - 45px);
-  display: flex;
+  display: none;
   flex-direction: column;
   position: relative;
+}
+
+.contact-mex.active{
+  display: flex;
 }
 
 .contact-mex > div{

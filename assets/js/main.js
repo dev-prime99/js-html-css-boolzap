@@ -27,6 +27,7 @@ $(document).keydown(function (e){
 // funione stampa testo
 function text(){
 
+  var chatactive = $(".contact-mex.active").attr("data-ref");
   var messaggio = $("#myinput").val();
   var risposta = "Ok";
 
@@ -44,16 +45,16 @@ function text(){
 if ( !$("#myinput").val() ) {
   alert("inserisci un testo");
   } else{
-  $(".contact-mex").append(elmentmsg);
+  $(".contact-mex[data-ref=" + chatactive + "]").append(elmentmsg);
   setTimeout(function () {
-    $(".contact-mex").append(messcontact)
+    $(".contact-mex[data-ref=" + chatactive + "]").append(messcontact)
   }, 1000);
 
   $("#myinput").val("");
   }
 }
 
-
+// funzione ricerca contatti
 $("#search_contact").keyup(function(){
 
   var text = $("#search_contact").val().toLowerCase();
@@ -75,3 +76,17 @@ $("#search_contact").keyup(function(){
     }
   });
 });
+
+
+// funzione cambio chat
+$(".chat").click(function () {
+   var click = $(this).attr("data-ref");
+   var foto = $(".chat[data-ref=" + click + "] img").attr("src");
+   var nome = $(".chat[data-ref=" + click + "] .nomecont").clone();
+   console.log(foto);
+
+   $(".chat").removeClass("active");
+   $(".contact-mex").removeClass("active");
+   $(this).addClass("active");
+   $(".contact-mex[data-ref=" + click + "]").addClass("active");
+})
