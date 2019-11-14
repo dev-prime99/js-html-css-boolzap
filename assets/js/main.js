@@ -48,6 +48,7 @@ if ( !$("#myinput").val() ) {
   $(".contact-mex[data-ref=" + chatactive + "]").append(elmentmsg);
   setTimeout(function () {
     $(".contact-mex[data-ref=" + chatactive + "]").append(messcontact)
+    $("#accesso").text("Ultimo accesso: " + time);
   }, 1000);
 
   $("#myinput").val("");
@@ -82,11 +83,12 @@ $("#search_contact").keyup(function(){
 $(".chat").click(function () {
    var click = $(this).attr("data-ref");
    var foto = $(".chat[data-ref=" + click + "] img").attr("src");
-   var nome = $(".chat[data-ref=" + click + "] .nomecont").clone();
-   console.log(foto);
+   var nome = $(".chat[data-ref=" + click + "] .nomecont").attr("id");
 
    $(".chat").removeClass("active");
    $(".contact-mex").removeClass("active");
    $(this).addClass("active");
    $(".contact-mex[data-ref=" + click + "]").addClass("active");
+   $("#name").text(nome);
+   $("#foto").prop("src", foto);
 })
